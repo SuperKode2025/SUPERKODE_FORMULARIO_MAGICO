@@ -1,183 +1,61 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario Mágico</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <title>Formulario</title>
+   <link rel="stylesheet"  href="css.css">
 </head>
 <body>
-    <div class="container">
-        <div class="form-wrapper">
-            <h1 class="form-title">Formulario Mágico</h1>
-            <p class="form-subtitle">Completa todos los campos para continuar</p>
-            
-            <form class="magic-form" id="magicForm">
-                <div class="form-group">
-                    <label for="nombre">Nombre completo</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                </div>
 
-                <div class="form-group">
-                    <label for="email">Correo electrónico</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
+    <div class="block card">
+    <h1>Inscripción al club de Lectura</h1>
+    <form>
+        <section>
+                <label class="form__label">Nombre</label>
+                <input type="text" class="form__input" required minlength="3" placeholder="Ej: Ruben el Sabio">
 
-                <div class="form-group">
-                    <label for="telefono">Teléfono</label>
-                    <input type="tel" id="telefono" name="telefono" required>
-                </div>
+                <label class="form__label">Correo electronico</label>
+                <input type="email" class="form__input" required placeholder="Ej: ruben@gmail.com">
+        </section>
 
-                <div class="form-group">
-                    <label for="fecha">Fecha de nacimiento</label>
-                    <input type="date" id="fecha" name="fecha" required>
-                </div>
+        <section>
+            <label class="form__label">Tipo de lectura</label>
+            <select class="form__select" required>
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option value="terror">Terror</option>
+                <option value="romance">Romance</option>
+                <option value="fantasia">Fantasía</option>
+                <option value="ciencia Ficción">Ciencia Ficción</option>
+                <option value="otras">Otras</option>
+            </select>
+        </section>
+        
+        <section>
+            <label class="form__label">¿Tienes libros?</label>
+            <div class="select">
+            <input type="radio" value="si" name="libros" id="libros_si">
+            <label for="libros_si">Si</label>
+            <input type="radio" value="no" name="libros" id="libros_no">
+            <label for="libros_no">No</label>
+            </div>
+        </section>
 
-                <div class="form-group">
-                    <label for="genero">Género</label>
-                    <select id="genero" name="genero" required>
-                        <option value="">Selecciona una opción</option>
-                        <option value="masculino">Masculino</option>
-                        <option value="femenino">Femenino</option>
-                        <option value="otro">Otro</option>
-                        <option value="prefiero-no-decir">Prefiero no decir</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="pais">País</label>
-                    <select id="pais" name="pais" required>
-                        <option value="">Selecciona tu país</option>
-                        <option value="argentina">Argentina</option>
-                        <option value="bolivia">Bolivia</option>
-                        <option value="chile">Chile</option>
-                        <option value="colombia">Colombia</option>
-                        <option value="costa-rica">Costa Rica</option>
-                        <option value="cuba">Cuba</option>
-                        <option value="ecuador">Ecuador</option>
-                        <option value="el-salvador">El Salvador</option>
-                        <option value="espana">España</option>
-                        <option value="guatemala">Guatemala</option>
-                        <option value="honduras">Honduras</option>
-                        <option value="mexico">México</option>
-                        <option value="nicaragua">Nicaragua</option>
-                        <option value="panama">Panamá</option>
-                        <option value="paraguay">Paraguay</option>
-                        <option value="peru">Perú</option>
-                        <option value="republica-dominicana">República Dominicana</option>
-                        <option value="uruguay">Uruguay</option>
-                        <option value="venezuela">Venezuela</option>
-                        <option value="otro">Otro</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="intereses">Intereses</label>
-                    <div class="checkbox-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="intereses" value="tecnologia">
-                            <span class="checkmark"></span>
-                            Tecnología
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="intereses" value="deportes">
-                            <span class="checkmark"></span>
-                            Deportes
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="intereses" value="musica">
-                            <span class="checkmark"></span>
-                            Música
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="intereses" value="arte">
-                            <span class="checkmark"></span>
-                            Arte
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="intereses" value="viajes">
-                            <span class="checkmark"></span>
-                            Viajes
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="intereses" value="lectura">
-                            <span class="checkmark"></span>
-                            Lectura
-                        </label>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="mensaje">Mensaje (opcional)</label>
-                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos algo sobre ti..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="acepto" value="si" required>
-                        <span class="checkmark"></span>
-                        Acepto los <a href="#" class="terms-link">términos y condiciones</a>
-                    </label>
-                </div>
-
-                <div class="form-group">
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="newsletter" value="si">
-                        <span class="checkmark"></span>
-                        Deseo recibir noticias y actualizaciones por correo electrónico
-                    </label>
-                </div>
-
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">Enviar Formulario</button>
-                    <button type="reset" class="btn btn-secondary">Limpiar</button>
-                </div>
-            </form>
-        </div>
+        <section class="aceptar">
+            <input type="checkbox" required id="normas_club">
+            <label for="normas_club">Acepto las normas del club</label>
+        </section>
+        <section>
+            <label for="comentarios">Comentarios adicionales</label>
+            <textarea rows="5" cols="30" placeholder="Comentarios adicionales"></textarea>
+        </section>
+        <section>
+             <button type="submit" class="form_button">Enviar</button>
+        </section> 
+        <section>
+             <button type="reset" class="form_button">Borrar</button>
+        </section>  
+    </form>
     </div>
-
-    <script>
-        document.getElementById('magicForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Obtener todos los datos del formulario
-            const formData = new FormData(this);
-            const data = {};
-            
-            // Convertir FormData a objeto
-            for (let [key, value] of formData.entries()) {
-                if (data[key]) {
-                    // Si ya existe, convertir a array
-                    if (Array.isArray(data[key])) {
-                        data[key].push(value);
-                    } else {
-                        data[key] = [data[key], value];
-                    }
-                } else {
-                    data[key] = value;
-                }
-            }
-            
-            // Mostrar los datos en consola
-            console.log('Datos del formulario:', data);
-            
-            // Mostrar mensaje de éxito
-            alert('¡Formulario enviado exitosamente! Revisa la consola para ver los datos.');
-            
-            // Aquí puedes agregar código para enviar los datos a un servidor
-            // fetch('/submit-form', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify(data)
-            // });
-        });
-
-        // Agregar animación al cargar la página
-        window.addEventListener('load', function() {
-            document.querySelector('.form-wrapper').classList.add('loaded');
-        });
-    </script>
 </body>
 </html>
